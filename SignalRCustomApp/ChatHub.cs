@@ -10,28 +10,28 @@ namespace SignalRCustomApp
 {
     public class ChatHub : Hub
     {
-    //    private IHostingEnvironment _hostingEnvironment;
+        private IHostingEnvironment _hostingEnvironment;
 
         static object locker = new object();
 
 
-        //public ChatHub(IHostingEnvironment environment)
-        //{
-        //    _hostingEnvironment = environment;
-        //}
+        public ChatHub(IHostingEnvironment environment)
+        {
+            _hostingEnvironment = environment;
+        }
 
         public async Task Send(string username, string message)
         {
-            //lock (locker)
-            //{
-            //   // var path = Path.Combine(_hostingEnvironment.WebRootPath, "Sample.PNG");
+            lock (locker)
+            {
+                var path = Path.Combine(_hostingEnvironment.ContentRootPath, "content\\messages.txt");
 
-            //    FileStream file1 = new FileStream(("~/content/messages.txt"), FileMode.Append);
-            //    StreamWriter writer = new StreamWriter(file1);
+                FileStream file1 = new FileStream(path, FileMode.Append);
+                StreamWriter writer = new StreamWriter(file1);
 
-            //    writer.Write(username + ":" + message + "\r");
-            //    writer.Close();
-            //}
+                writer.Write(username + ":" + message + "\r");
+                writer.Close();
+            }
 
             await this.Clients.All.SendAsync("Send", username, message);
         }
