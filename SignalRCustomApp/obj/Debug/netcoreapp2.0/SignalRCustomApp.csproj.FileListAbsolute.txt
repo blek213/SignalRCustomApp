@@ -1,0 +1,11 @@
+D:\repos\SignalRCustomApp\SignalRCustomApp\bin\Debug\netcoreapp2.0\SignalRCustomApp.deps.json
+D:\repos\SignalRCustomApp\SignalRCustomApp\bin\Debug\netcoreapp2.0\SignalRCustomApp.runtimeconfig.json
+D:\repos\SignalRCustomApp\SignalRCustomApp\bin\Debug\netcoreapp2.0\SignalRCustomApp.runtimeconfig.dev.json
+D:\repos\SignalRCustomApp\SignalRCustomApp\bin\Debug\netcoreapp2.0\SignalRCustomApp.dll
+D:\repos\SignalRCustomApp\SignalRCustomApp\bin\Debug\netcoreapp2.0\SignalRCustomApp.pdb
+D:\repos\SignalRCustomApp\SignalRCustomApp\obj\Debug\netcoreapp2.0\SignalRCustomApp.csprojAssemblyReference.cache
+D:\repos\SignalRCustomApp\SignalRCustomApp\obj\Debug\netcoreapp2.0\SignalRCustomApp.csproj.CoreCompileInputs.cache
+D:\repos\SignalRCustomApp\SignalRCustomApp\obj\Debug\netcoreapp2.0\SignalRCustomApp.AssemblyInfoInputs.cache
+D:\repos\SignalRCustomApp\SignalRCustomApp\obj\Debug\netcoreapp2.0\SignalRCustomApp.AssemblyInfo.cs
+D:\repos\SignalRCustomApp\SignalRCustomApp\obj\Debug\netcoreapp2.0\SignalRCustomApp.dll
+D:\repos\SignalRCustomApp\SignalRCustomApp\obj\Debug\netcoreapp2.0\SignalRCustomApp.pdb

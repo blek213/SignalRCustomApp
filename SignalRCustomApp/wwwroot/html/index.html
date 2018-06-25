@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../js/libraries/jquery/dist/jquery.js"></script>
+    <script src="../js/libraries/signalr/dist/browser/signalr.js"></script>
+   
+    <style>
+        #chatroom {
+            overflow: scroll; 
+            width: 300px;
+            height: 150px;
+            padding: 5px;
+            border: solid 1px black; 
+        } 
+    </style>
+
+</head>
+<body>
+
+    <div id="chatroom"></div><br /><br />
+
+    <div id="inputForm">
+        <label>UserName: </label><br /><br />
+        <input type="text" id="username" /><br /><br />
+        <label>Message: </label><br /><br />
+        <input type="text" id="message" /><br /><br />
+        <input type="button" id="sendBtn" value="Отправить" />
+    </div>
+
+    <script>
+        var xhr = new XMLHttpRequest();
+
+        let hubUrl = 'http://localhost:49411/chat';
+        const hubConnection = new signalR.HubConnectionBuilder()
+            .withUrl(hubUrl)
+            .configureLogging(signalR.LogLevel.Information)
+            .build();
+
+        hubConnection.on("Send", function (username, message) {
+
+            $("#chatroom").append("<p>" + username + ": " + message + "</p>");
+
+        });
+
+        $('#sendBtn').click(function (e) {
+            var username = $("#username").val();
+            var message = $("#message").val();
+
+            hubConnection.invoke("Send", username, message);
+        });
+
+        hubConnection.start();
+    </script>
+</body>
+</html>
